@@ -19,7 +19,11 @@ const HOME_QUERY = `{
       }
     }
   },
-  "skills": *[_type == "skill"],
+  "skills": *[_type == "skill"] | order(order asc) {
+  _id,
+  name,
+  order
+},
   "work_experience": *[_type == "experience"],
   "education": *[_type == "education"],
   "projects": *[_type == "project"],
