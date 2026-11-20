@@ -24,11 +24,11 @@ const HOME_QUERY = `{
   name,
   order
 },
-  "work_experience": *[_type == "experience"],
-  "education": *[_type == "education"],
+  "work_experience": *[_type == "experience"] | order(endDate desc),
+  "education": *[_type == "education"] | order(endDate desc),
   "projects": *[_type == "project"],
   "gallery": *[_type == "media"],
-  "awards": *[_type == "award_achievement"]
+  "awards": *[_type == "award_achievement"] | order(date desc)
 }
 `;
 
